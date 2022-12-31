@@ -13,7 +13,7 @@ public class RobotContainer {
   public static void init() {
     Autos.init();
 
-    autoChooser.setDefaultOption("Example Auto", null);
+    autoChooser.setDefaultOption("Example Auto", Autos.exampleAuto());
     autoChooser.addOption("None", Autos.none());
 
     configureBindings();

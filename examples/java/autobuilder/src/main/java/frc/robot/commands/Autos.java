@@ -2,7 +2,6 @@ package frc.robot.commands;
 
 import com.pathplanner.lib.PathConstraints;
 import com.pathplanner.lib.PathPlanner;
-import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.auto.SwerveAutoBuilder;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants;
@@ -10,7 +9,6 @@ import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Commands;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,8 +34,7 @@ public final class Autos {
   }
 
   public static CommandBase exampleAuto() {
-    ArrayList<PathPlannerTrajectory> pathGroup = PathPlanner.loadPathGroup("Example Auto", new PathConstraints(4, 3));
-    return autoBuilder.fullAuto(pathGroup);
+    return autoBuilder.fullAuto(PathPlanner.loadPathGroup("Example Auto", new PathConstraints(4, 3)));
   }
 
   public static CommandBase none() {
