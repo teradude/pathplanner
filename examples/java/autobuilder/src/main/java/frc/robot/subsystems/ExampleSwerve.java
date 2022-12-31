@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 // Mock swerve subsystem that just displays the output from path following commands
-// on a field 2d
+// on a field 2d. This won't be an accurate visualization so it might not match the actual path perfectly.
 public class ExampleSwerve extends SubsystemBase {
   private final Field2d field = new Field2d();
 

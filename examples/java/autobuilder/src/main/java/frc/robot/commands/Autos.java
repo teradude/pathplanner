@@ -13,25 +13,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class Autos {
-  private static SwerveAutoBuilder autoBuilder;
-
-  public static void init(){
-    HashMap<String, Command> eventMap = new HashMap<>(Map.ofEntries(
-            Map.entry("example1", Commands.print("Example 1 triggered")),
-            Map.entry("example2", Commands.print("Example 2 triggered")),
-            Map.entry("example3", Commands.print("Example 3 triggered"))
-    ));
-
-    autoBuilder = new SwerveAutoBuilder(
-            RobotContainer.swerve::getPose,
-            RobotContainer.swerve::resetOdometry,
-            Constants.Swerve.AUTO_TRANSLATION_CONSTANTS,
-            Constants.Swerve.AUTO_ROTATION_CONSTANTS,
-            RobotContainer.swerve::driveFieldRelative,
-            eventMap,
-            RobotContainer.swerve
-    );
-  }
+  private static final Map<String, Command> eventMap = new HashMap<>(Map.ofEntries(
+          Map.entry("example1", Commands.print("Example 1 triggered")),
+          Map.entry("example2", Commands.print("Example 2 triggered")),
+          Map.entry("example3", Commands.print("Example 3 triggered"))
+  ));
+  private static final SwerveAutoBuilder autoBuilder = new SwerveAutoBuilder(
+          RobotContainer.swerve::getPose,
+          RobotContainer.swerve::resetOdometry,
+          Constants.Swerve.AUTO_TRANSLATION_CONSTANTS,
+          Constants.Swerve.AUTO_ROTATION_CONSTANTS,
+          RobotContainer.swerve::driveFieldRelative,
+          eventMap,
+          RobotContainer.swerve
+  );
 
   public static CommandBase exampleAuto() {
     return autoBuilder.fullAuto(PathPlanner.loadPathGroup("Example Auto", new PathConstraints(4, 3)));

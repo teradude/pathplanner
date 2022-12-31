@@ -11,8 +11,6 @@ public class RobotContainer {
   private static final SendableChooser<CommandBase> autoChooser = new SendableChooser<>();
 
   public static void init() {
-    Autos.init();
-
     autoChooser.setDefaultOption("Example Auto", Autos.exampleAuto());
     autoChooser.addOption("None", Autos.none());
 
