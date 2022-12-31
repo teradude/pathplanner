@@ -11,10 +11,9 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 // Mock swerve subsystem that just displays the output from path following commands
 // on a field 2d
 public class ExampleSwerve extends SubsystemBase {
-  private Field2d field = new Field2d();
+  private final Field2d field = new Field2d();
 
   public ExampleSwerve() {
-
     SmartDashboard.putData("Field", field);
   }
 
