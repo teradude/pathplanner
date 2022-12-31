@@ -2,16 +2,15 @@
 
 #include <frc2/command/CommandPtr.h>
 
-#include "subsystems/ExampleSubsystem.h"
+#include "subsystems/ExampleSwerve.h"
 
 class RobotContainer {
  public:
-  RobotContainer();
+  static ExampleSwerve swerve;
 
-  frc2::CommandPtr GetAutonomousCommand();
+  static void init();
+  static frc2::CommandPtr GetAutonomousCommand();
 
  private:
-  ExampleSubsystem m_subsystem;
-
-  void ConfigureBindings();
+  static void ConfigureBindings();
 };
